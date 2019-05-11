@@ -1,6 +1,11 @@
-vendor/
-dockr.json
-docker-compose.yml
-bin/dockr.phar
-bin/dockr-old.phar
+# composer
+/vendor/
+
+# dot env
+/.env
+
+# build results
 /.docker/
+/bin/dockr*.phar
+/docker-compose.yml
+/dockr.json
