@@ -4,4 +4,40 @@ sendmail_path = ${PHP_MAIL}
 display_errors = On
 error_reporting = E_ALL
 memory_limit = 256M
-phar.readonly = 0
+phar.readonly = 1
+
+;;
+;; xdebug configuration
+;;
+
+xdebug.remote_enable=1
+xdebug.remote_connect_back=1
+
+;;
+;; for linux docker users (others might need to restart all the
+;; php-fpm container, always)
+;;
+;; this file can be edited while the the docker containers are running as it
+;; is mounted into the container.
+;;
+;; to notify php-fpm that the configuration has changed execute:
+;;
+;;     docker exec -t example-php-fpm pkill -e -USR2 -o php-fpm
+;;
+;; if the file is edited by replacing the file on disk with a new one, this does not
+;; work.
+;;
+;; phpstorm users:
+;;
+;;     disable "safe write" option
+;;
+;;     https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000355824-File-save-breaks-docker-bind-mount-any-fixes-
+;;
+;; sublime text users:
+;;
+;;     "atomic_save": false
+;;
+;; vim users:
+;;
+;;     set backupcopy=yes
+;;
